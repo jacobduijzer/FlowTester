@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowTester.Core", "FlowTester.Core\FlowTester.Core.csproj", "{DF9A0E9C-4F6E-4EED-B6C5-71A9D79C3F0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowTester.UnitTests", "FlowTester.UnitTests\FlowTester.UnitTests.csproj", "{948A6FE8-2FE8-4570-97E3-0C20737BA18B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF9A0E9C-4F6E-4EED-B6C5-71A9D79C3F0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF9A0E9C-4F6E-4EED-B6C5-71A9D79C3F0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF9A0E9C-4F6E-4EED-B6C5-71A9D79C3F0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF9A0E9C-4F6E-4EED-B6C5-71A9D79C3F0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{948A6FE8-2FE8-4570-97E3-0C20737BA18B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{948A6FE8-2FE8-4570-97E3-0C20737BA18B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{948A6FE8-2FE8-4570-97E3-0C20737BA18B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{948A6FE8-2FE8-4570-97E3-0C20737BA18B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
