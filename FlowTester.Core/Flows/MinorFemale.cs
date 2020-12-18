@@ -1,19 +1,15 @@
 using FlowTester.Core.Predicates;
-using Microsoft.Extensions.Logging;
 
 namespace FlowTester.Core.Flows
 {
-    public class MinorFemale : IFlow<Person, bool>
+    public class MinorFemale : IFlow<Person, string>
     {
-        public Spec<Person, bool> Flow { get; }
+        public Spec<Person, string> Flow { get; }
 
-        public MinorFemale(int minimumScore, DebugLogger debugLogger)
-        {
-            Flow = new Spec<Person, bool>()
+        public MinorFemale(DebugLogger debugLogger) =>
+            Flow = new Spec<Person, string>()
                 .Where(new MinorPredicate(debugLogger).Predicate)
                 .WhereNot(new MalePredicate(debugLogger).Predicate)
-                .WhereNot(new MinimumScoreValidation(minimumScore, debugLogger).Predicate)
-                .ResultsIn(true);
-        }
+                .ResultsIn(nameof(MinorFemale));
     }
 }

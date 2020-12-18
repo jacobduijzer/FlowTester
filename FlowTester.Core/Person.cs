@@ -4,6 +4,12 @@ namespace FlowTester.Core
         string FirstName,
         string LastName,
         int Age,
-        string Sex,
+        Sex Sex,
         int Score);
+
+    public enum Sex
+    {
+        Female,
+        Male
+    }
 }

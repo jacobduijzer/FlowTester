@@ -12,6 +12,6 @@ namespace FlowTester.Core.Predicates
             return _sexCheck(person);
         };
 
-        private readonly Func<Person, bool> _sexCheck = person => person.Sex.Equals("M");
+        private readonly Func<Person, bool> _sexCheck = person => person.Sex.Equals(Sex.Male);
     }
 }

@@ -2,16 +2,14 @@ using FlowTester.Core.Predicates;
 
 namespace FlowTester.Core.Flows
 {
-    public class AdultFemale : IFlow<Person, bool>
+    public class AdultFemale : IFlow<Person, string>
     {
-        public Spec<Person, bool> Flow { get; }
-        
-        public AdultFemale(DebugLogger debugLogger)
-        {
-            Flow = new Spec<Person, bool>()
+        public Spec<Person, string> Flow { get; }
+
+        public AdultFemale(DebugLogger debugLogger) =>
+            Flow = new Spec<Person, string>()
                 .Where(new AdultPredicate(debugLogger).Predicate)
                 .WhereNot(new MalePredicate(debugLogger).Predicate)
-                .ResultsIn(true);
-        }
+                .ResultsIn(nameof(AdultFemale));
     }
 }

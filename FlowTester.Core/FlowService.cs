@@ -10,7 +10,7 @@ namespace FlowTester.Core
         private readonly DebugLogger _debugLogger;
         private readonly ILogger<FlowService> _logger;
 
-        private readonly IList<IFlow<Person, bool>> _flows;
+        private readonly IList<IFlow<Person, string>> _flows;
 
         public FlowService(
             int minimumScore,
@@ -20,13 +20,13 @@ namespace FlowTester.Core
             _debugLogger = debugLogger;
             _logger = logger;
 
-            _flows = new List<IFlow<Person, bool>>()
+            _flows = new List<IFlow<Person, string>>()
             {
+                new MinorFemaleWithMinimumScore(minimumScore, debugLogger),
                 new MinorMale(debugLogger),
-                new MinorFemale(minimumScore, debugLogger),
+                new MinorFemale(debugLogger),
                 new AdultMale(debugLogger),
-                new AdultFemale(debugLogger),
-                new MinorFemaleWithMinimumScore(minimumScore, debugLogger)
+                new AdultFemale(debugLogger)
             };
         }
 
@@ -46,6 +46,15 @@ namespace FlowTester.Core
                     _debugLogger.Clear();
                 }
             }
+        }
+
+        public IFlow<Person, string> MatchPerson(Person person)
+        {
+           foreach(var flow in _flows)
+               if (flow.Flow.Satisfies(person))
+                   return flow;
+
+           throw new FlowNotFoundException();
         }
     }
 }
